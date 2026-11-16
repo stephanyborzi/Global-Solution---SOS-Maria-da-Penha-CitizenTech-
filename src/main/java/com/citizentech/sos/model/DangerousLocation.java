@@ -11,8 +11,8 @@ import java.time.LocalDateTime;
 public class DangerousLocation {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Long id;
     @ManyToOne(optional = false, fetch = FetchType.LAZY) @JoinColumn(name = "user_id") private User user;
-    @Column(nullable = false) private String type;
-    @Column(nullable = false) private String description;
+    @Column(nullable = false, length = 1800) private String description;
+    @Column(nullable = false, length = 180)  private String type;
     @Column(nullable = false) private double latitude;
     @Column(nullable = false) private double longitude;
     @Column(name = "created_at", nullable = false) private LocalDateTime createdAt;

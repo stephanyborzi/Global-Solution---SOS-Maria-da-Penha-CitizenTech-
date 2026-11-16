@@ -9,7 +9,7 @@ import lombok.Data;
 public class Contact {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Long id;
     @ManyToOne(optional = false, fetch = FetchType.LAZY) @JoinColumn(name = "user_id") private User user;
-    @Column(nullable = false) private String name;
+    @Column(nullable = false, length = 600)  private String name;
     @Column(nullable = false) private String phone;
 
     protected Contact() {}
